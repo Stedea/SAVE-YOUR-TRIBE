@@ -324,8 +324,12 @@ elif answer.lower() == "down" or answer.lower() == "d":
 
                 # TODO
         elif answer.lower() == "d" or answer.lower() == "down":
-            # TODO
-            print()
+            printWait("Well done you did not get chlorea disease by going down the right path")
+            treasure = treasure + 2000
+            printWait("For that you gain 2000 treasure.")
+            printWait("You now have " +str(treasure)+ " treasure")
+            printWait("However, You did run into an ogre that looks like Shrek and he has now challenged you to a number guessing game")
+            ogreGame()
         elif answer.lower() == "l" or answer.lower() == "left":
             # TODO
             print()
