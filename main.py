@@ -52,8 +52,7 @@ def validateIntegerInput(num):
 
 def askYesOrNo():
     choice = input("Please enter your choice [\"y\", \"n\"]: ")
-    while choice.lower() not in positiveAnswers and choice.lower(
-    ) not in negativeAnswers:
+    while choice.lower() not in positiveAnswers and choice.lower() not in negativeAnswers:
         choice = input("Please enter a valid option [\"y\", \"n\"]: ")
 
     if choice in positiveAnswers:
@@ -69,8 +68,7 @@ def getInput(options):
         firstLetterOptions.append(i[0])
 
     answer = input("Please enter your choice " + str(options) + ": ")
-    while answer.lower() not in options and answer.lower(
-    ) not in firstLetterOptions:
+    while answer.lower() not in options and answer.lower() not in firstLetterOptions:
         answer = input("Please enter a valid option " + str(options) + ": ")
     return (answer)
 
@@ -90,8 +88,7 @@ def quiz(questionNumber):
     i = randint(0, len(quizList) - 1)
 
     while lives > 0:
-        answer = input("Is " + quizList[i][0] + " equal to " + quizList[i][1] +
-                       ": ")
+        answer = input("Is " + quizList[i][0] + " equal to " + quizList[i][1] +": ")
         if (answer.lower() in positiveAnswers and quizList[i][2]) \
           or (answer.lower() in negativeAnswers and not quizList[i][2]):
             printWait("Well done Hero!!!")
@@ -99,8 +96,7 @@ def quiz(questionNumber):
         else:
             printWait("Try again")
             lives = lives - 1
-            printWait("You have lost 1 life, you have " + str(lives) +
-                      " lives left")
+            printWait("You have lost 1 life, you have " + str(lives) +" lives left")
     quizList.remove(quizList[i])
 
 
@@ -112,8 +108,7 @@ def ogreGame():
     printWait('Hello! What is your name?')
     myName = input()
     number = randint(1, 20)
-    printWait('Well, ' + myName +
-              ', I am thinking of a number between 1 and 20.')
+    printWait('Well, ' + myName +', I am thinking of a number between 1 and 20.')
     while guessesTaken < 6:
         printWait('Take a guess.')
         guess = input()
@@ -130,16 +125,12 @@ def ogreGame():
         elif guess > number:
             printWait("Your guess is too high")
         elif guess == number:
-            printWait('Good job, ' + myName + '! You guessed my number in ' +
-                      str(guessesTaken) + ' guesses!')
+            printWait('Good job, ' + myName + '! You guessed my number in ' +str(guessesTaken) + ' guesses!')
             # Code after guessing game
             printWait("Well done you escaped the ogre")
-            printWait(
-                "However the ogre does not like the fact that you beat him")
+            printWait("However the ogre does not like the fact that you beat him")
 
-            printWait(
-                "So as you were leaving he closed the door on you and then ate you"
-            )
+            printWait("So as you were leaving he closed the door on you and then ate you")
             printWait("You died")
             input("Press any key to exit: ")
             exit()
@@ -171,23 +162,15 @@ print("""    ██████████████████████�
       ██████         - by Mateusz
       ██             
     """)
-printWait(
-    "You are in a town that is going to be destroyed in a few weeks by the Gazula tribe"
-)
+printWait("You are in a town that is going to be destroyed in a few weeks by the Gazula tribe")
 printWait("You are the brave warrior that has been chosen to save the town")
 printWait("You must now enter a 'do or die quest' to save your town")
-printWait(
-    "However, you only have 3 lives to complete this quest so if you die after 3 times you will stay dead"
-)
+printWait("However, you only have 3 lives to complete this quest so if you die after 3 times you will stay dead")
 printWait("Have fun!")
 print("---")
 printWait("Here is your first challenge brave warrior")
-printWait(
-    "Your first challenge is an easy one. All you have to do is get 3 simple questions right."
-)
-printWait(
-    "You can answer the true or false questions with the first letter of the word"
-)
+printWait("Your first challenge is an easy one. All you have to do is get 3 simple questions right.")
+printWait("You can answer the true or false questions with the first letter of the word")
 
 # True or false game (3 questions)
 for i in range(currentQuiz, 4, 1):
@@ -195,9 +178,7 @@ for i in range(currentQuiz, 4, 1):
     currentQuiz = currentQuiz + 1
 
 if lives == 0:
-    print(
-        "You ran out of lives. A Gazualian gnome shoots you with a poison dart."
-    )
+    print("You ran out of lives. A Gazualian gnome shoots you with a poison dart.")
     input("Press any key to exit: ")
     exit()
 
@@ -212,11 +193,8 @@ printWait("You now have to choose a pathway to travel down")
 answer = getInput(["left", "right", "down"])
 if answer.lower() == "left" or answer.lower() == "l":
     treasure = treasure + 150
-    printWait("You have found a very small treasure room, you now have " +
-              str(treasure) + " treasure")
-    printWait(
-        "If you chose the left (which you quite obviously did) path you have 150 treasure."
-    )
+    printWait("You have found a very small treasure room, you now have " +str(treasure) + " treasure")
+    printWait("If you chose the left (which you quite obviously did) path you have 150 treasure.")
     printWait("You can go 'LEFT', 'DOWN'")
     answer = getInput(["left", "down"])
 
@@ -224,12 +202,9 @@ if answer.lower() == "left" or answer.lower() == "l":
     if answer.lower() == "down" or answer.lower() == "d":
         printWait("You found another treasure room")
         treasure = treasure + 30000
-        printWait("This treasure room gained you " + str(treasure) +
-                  " treasure")
+        printWait("This treasure room gained you " + str(treasure) +" treasure")
 
-        printWait(
-            "However, as you picked up the treasure a hole in the floor appeared"
-        )
+        printWait("However, as you picked up the treasure a hole in the floor appeared")
         printWait("You fell through the hole and died")
         lives = lives - 3
         input("Press any key to exit: ")
@@ -255,24 +230,18 @@ if answer.lower() == "left" or answer.lower() == "l":
 
     if answer.lower() == "left" or answer.lower() == "l":
         printWait("Well done, you chose the ......")
-
         printWait("Correct Path")
 
-    printWait(
-        """You now have to fight an ogre who really doesn't like the fact that you achieved this much within the game
-    You now have to choose between two options and if you survive you get to advance within the game"""
-    )
+    printWait("You now have to fight an ogre who really doesn't like the fact that you achieved this much within the game")
+    printWait("You now have to choose between two options and if you survive you get to advance within the game")
     printWait("Choose option 'A' or option 'B'")
     answer = getInput(["a", "b"])
     if answer.lower() == "a":
         printWait("Well done you chose the ...")
-
         printWait("Correct Path")
         treasure = treasure + 50
         printWait("You now have " + str(treasure) + " treasure")
-        printWait(
-            "However, the ogre doesnt like that you have almost escaped his fierce green hairy hands"
-        )
+        printWait("However, the ogre doesnt like that you have almost escaped his fierce green hairy hands")
 
         printWait("He has challenged you to a number guessing game")
         ogreGame()
@@ -291,95 +260,60 @@ elif answer.lower() == "right" or answer.lower() == "r":
     input("Press any key to exit: ")
     exit()
 elif answer.lower() == "down" or answer.lower() == "d":
-    printWait(
-        "You are walking through the woods and see an old lady on the floor")
-
+    printWait("You are walking through the woods and see an old lady on the floor")
     printWait("You also have two paths to go down")
-
     printWait("You also have to choose option 'A' or 'B' ")
-
-    printWait(
-        "However you do not get to see what happens between option 'A' or 'B' so choose very wisely"
-    )
+    printWait("However you do not get to see what happens between option 'A' or 'B' so choose very wisely")
     answer = getInput(["a", "b"])
     if answer.lower() == "a":
         printWait("You walked down the path with the old lady")
 
         printWait("You approach the old lady")
 
-        printWait(
-            "You are now killed by the old lady because she turns out to be a witch"
-        )
+        printWait("You are now killed by the old lady because she turns out to be a witch")
 
         input("Press any key to exit: ")
         exit()
     elif answer.lower() == "b":
-        printWait(
-            "You have walked down the second path away from the old lady")
+        printWait("You have walked down the second path away from the old lady")
 
-        printWait(
-            "You chose the correct way because the old lady turnd out to be a witch so when you walked past her she would have killed you"
-        )
+        printWait("You chose the correct way because the old lady turnd out to be a witch so when you walked past her she would have killed you")
 
         treasure = treasure + 150
-        printWait("For that you have gained 150 treasure. You now have " +
-                  str(treasure) + "treasure")
+        printWait("For that you have gained 150 treasure. You now have " +str(treasure) + "treasure")
         printWait("You now have three more choices to make")
         answer = getInput(["left", "right", "down"])
         if answer.lower() == "r" or answer.lower() == "right":
             printWait("You keep walking forwards until you trip over a branch")
-            printWait(
-                "You notice that there is a lever under a bush nearby as you get up"
-            )
+            printWait("You notice that there is a lever under a bush nearby as you get up")
             printWait("Do you pull the lever?")
             answer = askYesOrNo()
             if answer:
-                printWait(
-                    "A trapdoor opens up through which you decide to go through"
-                )
-                printWait(
-                    "You climb down into the medieval sewer system and find a golden ring"
-                )
-                printWait(
-                    "You put it on and find out that you can now breathe underwater"
-                )
+                printWait("A trapdoor opens up through which you decide to go through")
+                printWait("You climb down into the medieval sewer system and find a golden ring")
+                printWait("You put it on and find out that you can now breathe underwater")
                 printWait("Do you swim in the sewers?")
                 answer = askYesOrNo()
                 if answer:
-                    printWait(
-                        "You jump down into the sewers and clench your nose as you swim"
-                    )
-                    printWait(
-                        "You quickly dunk to see if there is anything inside the sewer"
-                    )
-                    printWait(
-                        "You then realise that you can breathe underwater, but you are not immune to diseases"
-                    )
-                    printWait(
-                        "You climb out of the sewer and lie down on your side")
+                    printWait("You jump down into the sewers and clench your nose as you swim")
+                    printWait("You quickly dunk to see if there is anything inside the sewer")
+                    printWait("You then realise that you can breathe underwater, but you are not immune to diseases")
+                    printWait("You climb out of the sewer and lie down on your side")
                     printWait("You die a slow, painful death of cholera")
                     input("Press any key to exit: ")
                     exit()
                 else:
-                    printWait(
-                        "You keep walking for miles and miles through the sewers"
-                    )
-                    printWait(
-                        "Eventually you meet the secret underground sewer society (USUS) ran by Bruce Lee"
-                    )
+                    printWait("You keep walking for miles and miles through the sewers")
+                    printWait("Eventually you meet the secret underground sewer society (USUS) ran by Bruce Lee")
                     printWait("They treat you nicely and offer you food")
                     printWait("But they are not truly this nice...")
-                    printWait(
-                        "They are following one of their ancient cannibalist rituals and are stuffing you with raw rat meat"
-                    )
+                    printWait("They are following one of their ancient cannibalist rituals and are stuffing you with raw rat meat")
                     printWait("They kill you and make stew from your toenails")
                     input("Press any key to exit: ")
                     exit()
             else:
                 printWait("You correctly chose not to pull the lever")
-                printWait(
-                    "It would've opened the sewers and you would've either died of cholera poisoning or been eaten by the sewer people"
-                )
+                printWait("It would've opened the sewers and you would've either died of cholera poisoning or been eaten by the sewer people")
 
                 quiz(currentQuiz)
                 currentQuiz = currentQuiz + 1
