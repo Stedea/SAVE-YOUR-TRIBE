@@ -322,14 +322,34 @@ elif answer.lower() == "down" or answer.lower() == "d":
                 printWait("You gained 300 treasure for that you now have " +
                           str(treasure) + " treaure")
 
-                # TODO
-        elif answer.lower() == "d" or answer.lower() == "down":
+#Stephen code
+                printWait("You have now completed all challenges that you have to do.")
+                printWait("For now")
+                printWait("You have walked down a path and have come face to face with a certain celebrity")
+                printWait("That celebrity turns out to be the one and only BORIS JOHNSON - - - A.K.A BOJO")
+                printWait("Do you speak to him. For he has a song to sing for you. ")
+            answer = askYesOrNo()
+        if answer:
+           
+          printWait("You have accepted BOJO'S song request.")
+          printWait("Here it is.") 
+sleep(4)
+
+printWait("LAST CHRISTMAS WE KEPT YOU APART, BUT THE VERY NEXT DAY WE PARTIED AWAY. THIS YEAR TO SAVE MY CAREER, I'LL HAVE TO THINK OF SOMETHING SPECIAL")
+
+sleep(3)
+
+printWait("This comes curtusey of your covid restriction ignorer priminister BORIS JOHNSON")
+
+#Todo
+if answer.lower() == "d" or answer.lower() == "down":
+            
             printWait("Well done you did not get chlorea disease by going down the right path")
             treasure = treasure + 2000
             printWait("For that you gain 2000 treasure.")
             printWait("You now have " +str(treasure)+ " treasure")
             printWait("However, You did run into an ogre that looks like Shrek and he has now challenged you to a number guessing game")
             ogreGame()
-        elif answer.lower() == "l" or answer.lower() == "left":
-            # TODO
-            print()
+  
+ 
+
