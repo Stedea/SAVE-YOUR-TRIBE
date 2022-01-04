@@ -1,10 +1,25 @@
+#!/usr/bin/env python3
 from random import randint
 from time import sleep
+import pygame
 
 # A COUPLE OF NOTES:
 # We do not use print() for story-telling, we use printWait() since it automatically sleeps
 # We do not use input() for inputs, we use getInput(["optionA","optionB"...])
 # For yes or no questions, use askYesOrNo() which either returns True or False
+
+# initialise pygame
+X = 1000
+Y = 500
+
+pygame.init()
+display_surface = pygame.display.set_mode((X, Y))
+pygame.display.set_caption("SAVE-YOUR-TRIBE")
+font = pygame.font.Font(None, 32)
+text = font.render("Test", True, (255, 0, 0))
+textRect = text.get_rect()
+display_surface.fill((0, 255, 255))
+display_surface.blit(text, textRect)
 
 lives = 3
 treasure = 0
@@ -33,7 +48,6 @@ quizList = [
 
 # function to wait an appropriate amount of time before sending next message
 # the longer the message the longer it waits
-# implemented by: Vlad
 # "sleep" must be imported from the "time" module. *Ohh yeah it's sleep time*
 def printWait(text):
     words = len(text.strip().split(" "))
@@ -142,8 +156,8 @@ def ogreGame():
 
 
 # Initial game code
-print("""    ████████████████████████████████████    
-  ██                                    ██  
+print("""    ████████████████████████████████████
+  ██                                    ██
 ██                                        ██
 ██                                        ██
 ██        ████    ██    ██  ██████        ██
@@ -153,14 +167,14 @@ print("""    ██████████████████████�
 ██        ████    ██    ██    ██          ██
 ██                                        ██
 ██                                        ██
-  ██                                    ██  
-    ██████      ████████████████████████    
-        ██      ██              
-        ██      ██  THE DUNGEON GAME 
+  ██                                    ██
+    ██████      ████████████████████████
+        ██      ██
+        ██      ██  THE DUNGEON GAME
       ██      ██     - by Stephen
       ██    ██       - by Vlad
       ██████         - by Mateusz
-      ██             
+      ██
     """)
 printWait("You are in a town that is going to be destroyed in a few weeks by the Gazula tribe")
 printWait("You are the brave warrior that has been chosen to save the town")
